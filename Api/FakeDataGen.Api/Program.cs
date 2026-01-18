@@ -3,10 +3,18 @@ using FakeDataGen.Api.Errors;
 using FakeDataGen.Api.Middlewares;
 using FakeDataGen.Application;
 using FakeDataGen.Core;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.OpenApi;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedProto |
+        ForwardedHeaders.XForwardedHost;
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi(options =>
@@ -58,5 +66,6 @@ app.MapScalarApiReference(options =>
 
 app.MapCpfEndpoints();
 app.MapCnpjEndpoints();
+app.UseForwardedHeaders();
 
 await app.RunAsync();
