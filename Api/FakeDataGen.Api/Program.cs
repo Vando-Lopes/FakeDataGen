@@ -46,6 +46,7 @@ builder.Services.AddScoped<ErrorHandlingMiddleware>();
 var app = builder.Build();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
+app.MapGet("/", () => Results.Redirect("/scalar"));
 app.MapOpenApi();
 app.MapErrorDocumentation();
 app.MapScalarApiReference(options =>
