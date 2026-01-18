@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Itens de Solução/">
+    <File Path=".dockerignore" />
+    <File Path="docker-compose.yml" />
+  </Folder>
+  <Project Path="Api/FakeDataGen.Api/FakeDataGen.Api.csproj" />
+  <Project Path="Application/FakeDataGen.Application.Tests/FakeDataGen.Application.Tests.csproj" Id="30c920e0-60dc-4d0c-ac3b-9fced5b19099" />
+  <Project Path="Application/FakeDataGen.Application/FakeDataGen.Application.csproj" />
+  <Project Path="Core/FakeDataGen.Core/FakeDataGen.Core.csproj" />
+  <Project Path="FakeDataGen.Core/FakeDataGen.Core.Tests/FakeDataGen.Core.Tests.csproj" Id="67cd3dbd-22ef-4671-b305-c1f601348dae" />
+</Solution>
